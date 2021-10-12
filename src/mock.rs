@@ -39,7 +39,7 @@ parameter_types! {
 }
 
 impl frame_system::Config for Test {
-	type BaseCallFilter = ();
+	type BaseCallFilter = frame_support::traits::Everything;
 	type BlockWeights = ();
 	type BlockLength = ();
 	type DbWeight = ();
@@ -73,7 +73,7 @@ impl pallet_connectfour::Config for Test {
 pub fn new_test_ext() -> sp_io::TestExternalities {
 	//frame_system::GenesisConfig::default().build_storage::<Test>().unwrap().into()
 	let t = GenesisConfig {
-			frame_system: Default::default(),
+			system: Default::default(),
 		}.build_storage().unwrap();
 		t.into()
 }

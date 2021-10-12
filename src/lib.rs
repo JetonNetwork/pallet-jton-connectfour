@@ -9,6 +9,7 @@ use frame_support::{
 	log,
 	traits::{Randomness},
 };
+use scale_info::TypeInfo;
 use sp_runtime::{
 	traits::{Hash, TrailingZeroInput}
 };
@@ -32,7 +33,7 @@ mod benchmarking;
 pub mod connectfour;
 use connectfour::{Logic};
 
-#[derive(Encode, Decode, Clone, PartialEq)]
+#[derive(Encode, Decode, Clone, PartialEq, TypeInfo)]
 pub enum BoardState<AccountId> {
 	None,
 	Running,
@@ -42,7 +43,7 @@ pub enum BoardState<AccountId> {
 impl<AccountId> Default for BoardState<AccountId> { fn default() -> Self { Self::None } }
 
 /// Connect four board structure containing two players and the board
-#[derive(Encode, Decode, Default, Clone, PartialEq)]
+#[derive(Encode, Decode, Default, Clone, PartialEq, TypeInfo)]
 #[cfg_attr(feature = "std", derive(Debug))]
 pub struct BoardStruct<Hash, AccountId, BlockNumber, BoardState> {
 	id: Hash,
@@ -99,7 +100,6 @@ pub mod pallet {
 	// Pallets use events to inform users when important changes are made.
 	// https://substrate.dev/docs/en/knowledgebase/runtime/events
 	#[pallet::event]
-	#[pallet::metadata(T::AccountId = "AccountId")]
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
 		/// A new board got created.
