@@ -1,6 +1,6 @@
 [package]
 name = 'pallet-ajuna-connectfour'
-version = '0.1.0'
+version = '4.0.0-dev'
 description = 'Ajuna Network pallet connect four'
 authors = ['Ajuna Network <https://github.com/ajuna-network>']
 edition = '2018'
@@ -27,7 +27,7 @@ frame-support = {default-features = false, version = '4.0.0-dev', git = 'https:/
 frame-system = {default-features = false, version = '4.0.0-dev', git = 'https://github.com/paritytech/substrate.git', tag = 'monthly-2021-10'}
 
 # external pallets
-pallet-matchmaker = {default-features = false, version = '0.1.0', git = 'https://github.com/ajuna-network/pallet-ajuna-matchmaker.git', tag = 'monthly-2021-10'}
+pallet-matchmaker = {default-features = false, version = '4.0.0-dev', git = 'https://github.com/ajuna-network/pallet-ajuna-matchmaker.git', tag = 'monthly-2021-10'}
 
 [dev-dependencies]
 serde = '1.0.119'
