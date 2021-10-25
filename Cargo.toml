@@ -1,5 +1,5 @@
 [package]
-name = 'pallet-ajuna-connectfour'
+name = 'pallet-connectfour'
 version = '4.0.0-dev'
 description = 'Ajuna Network pallet connect four'
 authors = ['Ajuna Network <https://github.com/ajuna-network>']
