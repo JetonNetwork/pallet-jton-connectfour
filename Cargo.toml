@@ -17,27 +17,27 @@ codec = {default-features = false, features = ['derive','max-encoded-len'], pack
 scale-info = {default-features = false, features = ['derive'], version = '1.0'}
 
 # primitives
-sp-std = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-sp-runtime = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-sp-io = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
+sp-std = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
+sp-runtime = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
+sp-io = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
 
 # Substrate dependencies
-frame-benchmarking = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf', optional = true}
-frame-support = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-frame-system = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
+frame-benchmarking = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master', optional = true}
+frame-support = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
+frame-system = {default-features = false, git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
 
 [dev-dependencies]
 serde = '1.0.126'
-sp-core = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-frame-support-test = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-pallet-preimage = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
-pallet-scheduler = {default-features = false, git = 'https://github.com/paritytech/substrate.git', rev = '2a7a734c373d0b28c6c658667effd3fb8c9e35bf'}
+sp-core = {git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
+frame-support-test = {git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
+pallet-scheduler = {git = 'https://github.com/paritytech/substrate.git', branch = 'master'}
 
 [features]
 default = ['std']
 runtime-benchmarks = ['frame-benchmarking']
 std = [
 	'codec/std',
+	'scale-info/std',
 	'sp-std/std',
 	'sp-runtime/std',
 	'sp-io/std',
